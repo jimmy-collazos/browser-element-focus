@@ -1,0 +1,16 @@
+{
+  "name": "browser-element-focus",
+  "version": "0.0.1",
+  "description": "Herramienta para obtener el foco de un elemento",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup": "^2.23.0"
+  },
+  "author": "Jimmy Collazos <jimmy.collazos@gmail.com>",
+  "license": "GPL-3.0"
+}

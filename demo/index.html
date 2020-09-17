@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box_a">
+    <div>
+      <div>
+        <a id="input_a" href="#">link</a>
+        <form>
+          <input type="text" name="name"/>
+        </form>
+      </div>
+    </div>
+    <a href="#" id="input_b">link</a>
+  </div>
+  <script type="module">
+    import {getFirstFocusable, getFocusableWalker} from '../esm/index.js';
+    
+    const firstFocusable = getFirstFocusable(document.querySelector('#box_a'));
+    const focusableWalker = getFocusableWalker(document.querySelector('#box_a'));
+
+    console.group('firstFocusable')
+    console.log(firstFocusable, '<a id="input_a" ...') // <a ...
+    console.groupEnd();
+
+    console.group('focusableWalker')
+    console.log(focusableWalker.nextNode(), '<a id="input_a" ...') // <a ...
+    console.log(focusableWalker.nextNode(), '<input ...') // <a ...
+    console.log(focusableWalker.nextNode(), '<a id="input_b" ...') // <a ...
+    console.groupEnd();
+  </script>
+</body>
+</html>
+
